@@ -87,6 +87,10 @@ def clear_sheet():
 
     response = requests.post(url, headers=headers)
     return jsonify(response.json()), response.status_code
-
+    
+@app.route('/')
+def index():
+    return 'OK', 200
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
